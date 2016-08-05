@@ -1,14 +1,14 @@
 {
-  "name": "promifs",
+  "name": "decb",
   "version": "1.0.0",
-  "description": "promisified FS",
+  "description": "promisified modules",
   "main": "index.js",
   "dependencies": {
     "denodeify": "1.2.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bminixhofer/promifs"
+    "url": "https://github.com/bminixhofer/decb"
   },
   "keywords": [
     "promise",
@@ -19,7 +19,7 @@
   "author": "bminixhofer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bminixhofer/promifs/issues"
+    "url": "https://github.com/bminixhofer/decb/issues"
   },
   "devDependencies": {
     "bash-color": "0.0.3",
