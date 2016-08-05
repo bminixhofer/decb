@@ -8,11 +8,11 @@ Use `fs.readFile` with Promises:
 ```js
     const decb = require('decb');
     const fs = decb(require('fs'));
-    
+
     fs.readFile('example.js', 'utf8').then(file => {
         console.log(file);
     });
-    
+
     console.log(fs.readFileSync('example.js', 'utf8');
     //Returns a promise and does not work
 ```
@@ -23,11 +23,11 @@ Use `fs.readFile` with Promises, but dont translate `fs.readFileSync`
     const fs = decb(require('fs'), {
       ignore: ['readFileSync']
     );
-    
+
     fs.readFile('example.js', 'utf8').then(file => {
         console.log(file);
     });
-    
+
     console.log(fs.readFileSync('example.js', 'utf8');
     //Works as expected
 ```
@@ -38,11 +38,11 @@ Use `fs.readFile` with Promises, but don't change the rest of the module
     const fs = decb(require('fs'), {
       use: ['readFile']
     );
-    
+
     fs.readFile('example.js', 'utf8').then(file => {
         console.log(file);
     });
-    
+
     console.log(fs.readFileSync('example.js', 'utf8');
     console.log(fs.readdirSync('lib'));
     //Works as expected
@@ -56,14 +56,9 @@ Use `fs.readFile` with Promises, but don't change the rest of the module
 ###decb(module[,config])
   - module: an npm module to translate
   - config: <JSON> a config object with either an `ignore` or `use` property
-  
+
 Returns a promisified version of the module
 
 ## License
-  
+
   MIT
-
-
-
-
-
