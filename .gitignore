@@ -1,4 +1,5 @@
 npm-debug.log
 node_modules
-.jshintrc
+.eslintrc.js
 .travis.yml
+.jshintrc
