@@ -1,14 +1,14 @@
 {
-  "name": "then-fs",
-  "version": "2.0.0",
-  "description": "promised FS",
+  "name": "promifs",
+  "version": "1.0.0",
+  "description": "promisified FS",
   "main": "index.js",
   "dependencies": {
-    "promise": ">=3.2 <8"
+    "denodeify": "1.2.1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/then/fs.git"
+    "url": "https://github.com/bminixhofer/promifs"
   },
   "keywords": [
     "promise",
@@ -16,13 +16,15 @@
     "fs",
     "core"
   ],
-  "author": "Nathan Zadoks",
+  "author": "bminixhofer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/then/fs/issues"
+    "url": "https://github.com/bminixhofer/promifs/issues"
   },
   "devDependencies": {
-    "bash-color": "0.0.3"
+    "bash-color": "0.0.3",
+    "eslint": "^3.2.2",
+    "eslint-config-google": "^0.6.0"
   },
   "scripts": {
     "test": "node test/index.js"
