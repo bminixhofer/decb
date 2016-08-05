@@ -1,6 +1,6 @@
 {
   "name": "decb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "promisified modules",
   "main": "index.js",
   "dependencies": {
