@@ -4,7 +4,7 @@
 
 ## Code Example
 
-Use `fs.readFile` with gPromises:
+Use `fs.readFile` with Promises:
 ```js
     const decb = require('decb');
     const fs = decb(require('fs'));
