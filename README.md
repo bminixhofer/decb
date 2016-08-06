@@ -13,22 +13,22 @@ Use `fs.readFile` with Promises:
         console.log(file);
     });
 
-    console.log(fs.readFileSync('example.js', 'utf8');
+    console.log(fs.readFileSync('example.js', 'utf8'));
     //Returns a promise and does not work
 ```
 
-Use `fs.readFile` with Promises, but dont translate `fs.readFileSync`
+Use `fs.readFile` with Promises, but don't translate `fs.readFileSync`
 ```js
     const decb = require('decb');
     const fs = decb(require('fs'), {
       ignore: ['readFileSync']
-    );
+    });
 
     fs.readFile('example.js', 'utf8').then(file => {
         console.log(file);
     });
 
-    console.log(fs.readFileSync('example.js', 'utf8');
+    console.log(fs.readFileSync('example.js', 'utf8'));
     //Works as expected
 ```
 
@@ -37,13 +37,13 @@ Use `fs.readFile` with Promises, but don't change the rest of the module
     const decb = require('decb');
     const fs = decb(require('fs'), {
       use: ['readFile']
-    );
+    });
 
     fs.readFile('example.js', 'utf8').then(file => {
         console.log(file);
     });
 
-    console.log(fs.readFileSync('example.js', 'utf8');
+    console.log(fs.readFileSync('example.js', 'utf8'));
     console.log(fs.readdirSync('lib'));
     //Works as expected
 ```
