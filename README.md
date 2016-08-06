@@ -32,7 +32,7 @@ Use `fs.readFile` with Promises, but dont translate `fs.readFileSync`
     //Works as expected
 ```
 
-Use `fs.readFile` with Promises, but don`t change the rest of the module
+Use `fs.readFile` with Promises, but don't change the rest of the module
 ```js
     const decb = require('decb');
     const fs = decb(require('fs'), {
