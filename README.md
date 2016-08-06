@@ -1,33 +1,69 @@
+# decb
 
-# then-fs
+`decb` is a module that translates modules to a promisified version of them. Note that it is not possible to differentiate between asynchronous and synchronous functions, so (if needed) it has do be done manually.
 
-  Promised version of the node.js `fs` module.
-  All non-callback-taking functions of fs are simply inherited.
+## Code Example
 
-[![Build Status](https://img.shields.io/travis/then/fs/master.svg)](https://travis-ci.org/then/fs)
-[![Dependency Status](https://img.shields.io/david/then/fs.svg)](https://david-dm.org/then/fs)
-[![NPM version](https://badge.fury.io/js/then-fs.png)](http://badge.fury.io/js/then-fs)
+Use `fs.readFile` with Promises:
+```js
+    const decb = require('decb');
+    const fs = decb(require('fs'));
+    
+    fs.readFile('example.js', 'utf8').then(file => {
+        console.log(file);
+    });
+    
+    console.log(fs.readFileSync('example.js', 'utf8');
+    //Returns a promise and does not work
+```
 
+Use `fs.readFile` with Promises, but dont translate `fs.readFileSync`
+```js
+    const decb = require('decb');
+    const fs = decb(require('fs'), {
+      ignore: ['readFileSync']
+    );
+    
+    fs.readFile('example.js', 'utf8').then(file => {
+        console.log(file);
+    });
+    
+    console.log(fs.readFileSync('example.js', 'utf8');
+    //Works as expected
+```
+
+Use `fs.readFile` with Promises, but don`t change the rest of the module
+```js
+    const decb = require('decb');
+    const fs = decb(require('fs'), {
+      use: ['readFile']
+    );
+    
+    fs.readFile('example.js', 'utf8').then(file => {
+        console.log(file);
+    });
+    
+    console.log(fs.readFileSync('example.js', 'utf8');
+    console.log(fs.readdirSync('lib'));
+    //Works as expected
+```
 ## Installation
 
-    $ npm install then-fs
+  `$ npm install decb`
 
 ## API
 
-  The API for `then-fs` is exactly that of the built in `fs` module except that any function which normally takes a callback returns a promise instead.
-
-  Example:
-
-```js
-function readJSON(path) {
-  return fs.readFile(path, 'utf8').then(JSON.parse)
-}
-readJSON(__dirname + '/package.json')
-  .done(function (obj) {
-    console.dir(oj)
-  })
-```
+###decb(module[,config])
+  - module: an npm module to translate
+  - config: <JSON> a config object with either an `ignore` or `use` property
+  
+Returns a promisified version of the module
 
 ## License
-
+  
   MIT
+
+
+
+
+
